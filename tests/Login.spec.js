@@ -15,11 +15,15 @@ test.skip('Third Test Case', async ({page})=>{
 })
 
 test('Fourth Test Case', async ({page})=>{
-    expect("Saqib Jamil").includes("saqib").toBeFalsy()
-    console.log("Test Run")
+    expect("Saqib Jamil".includes("saqib")).toBeFalsy()
 })
 
 test('Fifth Test Case', async ({page})=>{
-    expect("Saqib Jamil").toContain("Saqib").toBeTruthy()
-    console.log("Test Run")
+    expect("Saqib Jamil".includes("Saqib")).toBeTruthy()
+})
+
+test('Sixth Test Case', async({page})=>{
+    await page.goto("https://www.google.com/")
+    const url = await page.url()
+    console.log(url,"Console aa gia")
 })
