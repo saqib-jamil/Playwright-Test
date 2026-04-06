@@ -21,3 +21,9 @@ test('Fourth Test Case', async ({page})=>{
 test('Fifth Test Case', async ({page})=>{
     expect("Saqib Jamil".includes("Saqib")).toBeTruthy()
 })
+
+test('Sixth Test Case', async({page})=>{
+    await page.goto("https://www.google.com/")
+    const url = await page.url()
+    console.log(url,"Console aa gia")
+})
