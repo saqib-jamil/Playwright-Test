@@ -15,11 +15,9 @@ test.skip('Third Test Case', async ({page})=>{
 })
 
 test('Fourth Test Case', async ({page})=>{
-    expect("Saqib Jamil").includes("saqib").toBeFalsy()
-    console.log("Test Run")
+    expect("Saqib Jamil".includes("saqib")).toBeFalsy()
 })
 
 test('Fifth Test Case', async ({page})=>{
-    expect("Saqib Jamil").toContain("Saqib").toBeTruthy()
-    console.log("Test Run")
+    expect("Saqib Jamil".includes("Saqib")).toBeTruthy()
 })
