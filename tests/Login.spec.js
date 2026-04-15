@@ -1,29 +1,14 @@
-const {test,expect}=require('playwright/test')
+import {test,expect} from '@playwright/test'
+import Login from '../pages/Login'
 
-test('First Test Case', async ({page})=>{
-    expect(12).toBe(12)
-})
+test('Login Test Case', async ({page})=>{
+    const login = new Login(page)
+    await login.goto()
+    await login.login("na@yopmail.com", "123456")
 
-// test.only('Second Test Case', async ({page})=>{
-//     expect("Saqib Jamil").toContain("Saqib")
-//     console.log("Test Run")
-// })
+    await expect(page).toHaveURL("https://stage.loadsecuresystems.com/?filterBy=active")
 
-test.skip('Third Test Case', async ({page})=>{
-    expect("Saqib Jamil").toContain("Saqib")
-    console.log("Test Run")
-})
-
-test('Fourth Test Case', async ({page})=>{
-    expect("Saqib Jamil".includes("saqib")).toBeFalsy()
-})
-
-test('Fifth Test Case', async ({page})=>{
-    expect("Saqib Jamil".includes("Saqib")).toBeTruthy()
-})
-
-test('Sixth Test Case', async({page})=>{
-    await page.goto("https://www.google.com/")
-    const url = await page.url()
-    console.log(url,"Console aa gia")
+    await login.saveSession()
+    
+    
 })
