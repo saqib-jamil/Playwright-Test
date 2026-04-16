@@ -1,6 +1,6 @@
 import { test, expect } from "playwright/test";
 import PO from '../Pages/PO';
-import Login from "../Pages/Login.Js";
+import Login from "../Pages/Login";
 
 test("PO Test Case", async ({ page }) => {
   const po = new PO(page);
