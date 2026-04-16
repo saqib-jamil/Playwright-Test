@@ -1,7 +1,8 @@
+import { testData } from "../Utils/loginData";
 class Login {
     constructor(page) {
         this.page = page;
-        this.url = "https://stage.loadsecuresystems.com/login";
+        this.url = testData.url;
         this.username = page.getByRole('textbox', { name: 'Email' });
         this.password = page.getByRole('textbox', { name: 'Password' });
         this.loginButton = page.getByRole('button', { name: 'Sign in' });
